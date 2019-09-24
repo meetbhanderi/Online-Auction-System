@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <title>Add Product</title>
+    <link rel="shortcut icon" href="media/auctionbuzz/images/icon.png">
+
+        <style type="text/css">
+     body {
+        padding-bottom: 70px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+  position: relative;
+}
+
+body::before {
+  background: url(/media/auctionbuzz/images/g5.jpg) no-repeat center center fixed;
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+
+    .navi{
+        background-color:rgba(121, 85, 72, 0.3);
+
+
+    }
+    .home{
+        color: darkgoldenrod;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+    }
+    .home:hover{
+        text-decoration: none;
+    }
+    .about{
+        color:darkgreen;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+    }
+    .about:hover{
+        text-decoration: none;
+    }
+    .login{
+        color: darkgoldenrod;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+    }
+    .login:hover{
+        text-decoration: none;
+    }
+    .us{
+        color: darkgreen;
+
+        font-size: 30px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+
+
+    }
+    .us{
+        text-decoration: solid;
+    }
+    .logout{
+        color:darkgoldenrod ;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+    }
+    .logout:hover{
+        text-decoration: none;
+    }
+    .reg{
+        color: darkgreen;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+    }
+    .reg:hover{
+        text-decoration: none;
+    }
+    .carousel-inner{
+    height:600px !important;
+
+    }
+    .im{
+      height:110px;
+      width:220px;
+    }
+    .pr1{
+      color: skyblue;
+
+        font-size: 15px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+
+    }
+    .pr2{
+      color: yellow;
+        font-size: 15px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+
+    }
+    .con{
+
+        background-color:rgba(121, 85, 72, 0.3);
+
+    }
+    h3{
+      color: darkgreen;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+    }
+    a{
+      color: blue;
+      text-decoration: none;
+      font-family:Comic Sans MS;
+      font-size: 20px;
+    }
+    a:hover{
+        text-decoration: none;
+        color: white;
+    }
+    .uname{
+        background-color: darkgrey;
+        color: rgb(15, 69, 105);
+
+    }
+
+    .uid{
+        background-color: darkgrey;
+        color: rgb(15, 69, 105);
+    }
+    .fo{
+        color:rgb(255, 252, 246);
+        font-size: 20px;
+    }
+
+    .do{
+
+      color: rgb(10, 10, 10);
+      font-size: 20px;
+      border-radius: 10%;
+      border:solid;
+
+  }
+  .do:hover{
+      background-color: green;
+  }
+  .second{
+        background-color:rgba(121, 85, 72, 0.3);
+    }
+    .lop{
+        color: red;
+      text-decoration: none;
+        font-family: Comic Sans MS, serif;
+      font-size: 30px;
+    }
+    .bg-model{
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba(0,0,0,0.7);
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+    }
+    .model-content{
+        width: 400px;
+        height: 200px;
+        background-color: rgba(121, 85, 72, 0.3); ;
+        border-radius: 4px;
+        border-style:solid;
+        border-color: black;
+        text-align: center;
+
+    }
+    .title{
+        color: darkgreen;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+
+    }
+    .back{
+        color: darkgray;
+        font-size: 30px;
+        font-family: Comic Sans MS, serif;
+        text-decoration:none;
+        border-style: solid;
+        border-radius: 20%;
+
+    }
+                    .form-signin {
+            max-width: 440px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .container {
+                width: 750px;
+            }
+        }
+
+        .container {
+
+
+            align-content: center;
+        }
+
+        .blank_row {
+            height: 10px !important; /* Overwrite any previous rules */
+            background-color: #FFFFFF;
+        }
+        .navbar-inverse .navbar-brand {
+            color: white;
+        }
+
+        .navbar-inverse .navbar-brand:hover,
+        .navbar-inverse .navbar-brand:focus {
+            color: #f8f8f8;
+        }
+        .nav.navbar-nav li a{
+            color: white;
+        }
+
+        .nav.navbar-nav li a:hover,
+        .nav.navbar-nav li a :focus {
+            color: #f8f8f8;
+        }
+        .nav.navbar-nav.navbar-right li a {
+            color: white;
+        }
+
+        .nav.navbar-nav.navbar-right li a:hover,
+        .nav.navbar-nav.navbar-right li a :focus {
+            color: #f8f8f8;
+        }
+
+        .footer-bottom p {
+            margin: 20px 0 0 0;
+            color: white;
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            position: fixed;
+            background: black;
+            padding: 30px 0;
+            left: 0px;
+            bottom: 0px;
+            height: 50px;
+            width: 100%;
+        }
+
+        .copyrights p, .diff p {
+            color: white;
+            font-size: 14px;
+            margin-top: 0;
+        }
+
+        .copyrights p a, .diff p a {
+            color: white;
+            margin-left: 2px;
+        }
+
+        .copyrights p a:hover, .diff p a:hover {
+            color: white;
+        }
+    </style>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+      <!-- <div class="container-fluid">
+            <div class="row">
+                <div class="col4">
+                    <img src="/media/auctionbuzz/images/l2.png" class="img-fluid">
+
+                </div>
+                <div class="col2 home">
+                        <a class="home" href="two.html">Home </a>
+                    </div>
+                    <div class="col2 about">
+                            <a class="about" href="">  About</a></a>
+                        </div>
+                        <div class="col2 login">
+                                <a class="login" href="">  Login</a></a>
+                                </div>
+
+                                <div class="col2 reg">
+                                        <a class="reg" href="">  Registration</a></a>
+                                        </div>
+
+            </div>
+
+        </div>-->
+        <nav class="navbar navbar-dark primary-color navi">
+            <a class="navbar-brand" href="#">
+              <img src="/media/auctionbuzz/images/l2.png" height="100" alt="mdb logo">
+            </a>
+            <a class="navbar-brand" href="#">
+           <a href="{% url 'home' %}" class="home" >Home </a>
+            </a>
+            <a class="navbar-brand" href="#">
+           <a class="about" href="">About</a></a>
+
+
+
+
+           {% if user.is_authenticated %}
+               <a class="navbar-brand" href="#"></a>
+               <a href="{% url 'logout' %}" class="logout">Logout</a>
+               <p class="us">Hello <br>{{user.username}}</p>
+           {% else %}
+               <a class="navbar-brand" href="#">
+               <a href="{% url 'login' %}" class="login">Login</a></a>
+               <a class="navbar-brand" href="#">
+               <a href="{% url 'registration' %}" class="reg">Registration</a></a>
+           {% endif %}
+
+          </nav>
+          <br>
+          <br>
+          <br>
+
+         <div class="container-fluid" >
+              <div class="row second">
+                    {% if user.is_authenticated %}
+
+                                <div class="container" style="width: 100%;margin: auto">
+                                    {% block content %}
+                                    {% endblock %}
+                                </div>
+                    {% else %}
+                        <div class="bg-model">
+                            <div class="model-content">
+
+                                <br>
+
+                                <a class="navbar-brand" href="#">
+                                <a href="{% url 'login' %}" class="login">Login</a></a>
+
+                                <a class="navbar-brand" href="#">
+                                <a href="{% url 'registration' %}" class="reg">Registration</a></a>
+                                <br>
+                                <br>
+                                <br>
+
+                              <a class="navbar-brand" href="#">
+                                <a href="{% url 'home' %}" class="back">Back  </a></a>
+
+
+
+                                </div>
+                                </div>
+                            <!--<p class="lop">PLEASE..LOGIN FIRST</p>-->
+                    {% endif %}
+     <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.js"> </script>
+
+              </div>
+</body>
+
+</html>

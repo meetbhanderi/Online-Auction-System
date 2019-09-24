@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <title>Delete Product</title>
+    <link rel="shortcut icon" href="media/auctionbuzz/images/icon.png">
+
+    <style type="text/css">
+     body {
+        padding-bottom: 303px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+  position: relative;
+}
+
+body::before {
+  background: url(/media/auctionbuzz/images/g5.jpg) no-repeat center center fixed;
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+
+    .navi{
+        background-color:rgba(121, 85, 72, 0.3);
+
+
+    }
+    .home{
+        color: darkgoldenrod;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+    }
+    .home:hover{
+        text-decoration: none;
+    }
+    .about{
+        color:darkgreen;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+    }
+    .about:hover{
+        text-decoration: none;
+    }
+    .login{
+        color: darkgoldenrod;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+    }
+    .login:hover{
+        text-decoration: none;
+    }
+    .us{
+        color: darkgreen;
+
+        font-size: 30px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+
+
+    }
+    .us{
+        text-decoration: solid;
+    }
+    .logout{
+        color:darkgoldenrod ;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+    }
+    .logout:hover{
+        text-decoration: none;
+    }
+    .reg{
+        color: darkgreen;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+    }
+    .reg:hover{
+        text-decoration: none;
+    }
+    .carousel-inner{
+    height:600px !important;
+
+    }
+    .im{
+      height:110px;
+      width:220px;
+    }
+    .pr1{
+      color: skyblue;
+
+        font-size: 15px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+
+    }
+    .pr2{
+      color: yellow;
+        font-size: 15px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+
+    }
+    .con{
+
+        background-color:rgba(121, 85, 72, 0.3);
+
+    }
+    h3{
+      color: darkgreen;
+        font-size: 40px;
+        font-family:Comic Sans MS;
+        text-decoration:none;
+    }
+    a{
+      color:skyblue;
+      text-decoration: none;
+      font-family:Comic Sans MS;
+      font-size: 20px;
+    }
+    a:hover{
+        text-decoration: none;
+        color: white;
+    }
+            .profilePicture .img-responsive:hover {
+        opacity: 0.2;
+    }
+
+    .profilePicture img {
+        display: block;
+        margin: auto auto 0;
+        width: 250px;
+        height:250px;
+        max-width: 250px;
+        max-height: 250px;
+
+    }
+
+    .profilePicture .text {
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        text-align: center;
+        visibility: hidden;
+        width: 250px;
+        height: 30px;
+        font-family: "Maiandra GD", serif;
+    }
+    .profilePicture:hover .text {
+        visibility:visible;
+    }
+    </style>
+</head>
+<body>
+      <!-- <div class="container-fluid">
+            <div class="row">
+                <div class="col4">
+                    <img src="/media/auctionbuzz/images/l2.png" class="img-fluid">
+
+                </div>
+                <div class="col2 home">
+                        <a class="home" href="two.html">Home </a>
+                    </div>
+                    <div class="col2 about">
+                            <a class="about" href="">  About</a></a>
+                        </div>
+                        <div class="col2 login">
+                                <a class="login" href="">  Login</a></a>
+                                </div>
+
+                                <div class="col2 reg">
+                                        <a class="reg" href="">  Registration</a></a>
+                                        </div>
+
+            </div>
+
+        </div>-->
+        <nav class="navbar navbar-dark primary-color navi">
+            <a class="navbar-brand" href="#">
+              <img src="/media/auctionbuzz/images/l2.png" height="100" alt="mdb logo">
+            </a>
+            <a class="navbar-brand" href="#">
+           <a href="{% url 'home' %}" class="home" >Home </a>
+            </a>
+            <a class="navbar-brand" href="#">
+           <a class="about" href="">About</a></a>
+
+        <a href="{% url 'product_detail' product_id %}" style="font-size: 40px"><span class="glyphicon glyphicon-arrow-left"
+                                                             aria-hidden="true"></span> Back</a>
+
+           {% if user.is_authenticated %}
+                   <a class="navbar-brand" href="#"></a>
+                   <a href="{% url 'logout' %}" class="logout">Logout</a>
+                   <p class="us">Hello <br>{{user.username}}</p>
+
+           {% else %}
+                   <a class="navbar-brand" href="#">
+                   <a href="{% url 'login' %}" class="login">Login</a></a>
+                   <a class="navbar-brand" href="#">
+                   <a href="{% url 'registration' %}" class="reg">Registration</a></a>
+           {% endif %}
+
+          </nav>
+         <br>
+          <br>
+          <br>
+    <!--      <div class="container">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                        <ol class="carousel-indicators">
+                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                          <li data-target="#myCarousel" data-slide-to="1"></li>
+                          <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+
+
+                        <div class="carousel-inner">
+                          <div class="item active">
+                            <img src= '/media/auctionbuzz/images/g1.jpg' alt="Los Angeles">
+                          </div>
+
+                          <div class="item">
+                            <img src='/media/auctionbuzz/images/g2.jpg' alt="Chicago">
+                          </div>
+
+                          <div class="item">
+                            <img src='/media/auctionbuzz/images/g3.jpg' alt="New York">
+                          </div>
+                        </div>
+
+
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+
+
+
+        </div>
+
+
+    -->
+
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+     <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.js"> </script>
+</body>
+
+</html>

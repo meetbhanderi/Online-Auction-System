@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Login</title>
+        <link rel="shortcut icon" href="media/auctionbuzz/images/icon.png">
+
+    <style type="text/css">
+        body {
+            padding-bottom: 480px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            position: relative;
+        }
+
+        body::before {
+            background: url(/media/auctionbuzz/images/g5.jpg) no-repeat center center fixed;
+            content: '';
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            position:absolute;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            -webkit-filter: blur(3px);
+            -moz-filter: blur(3px);
+            -o-filter: blur(3px);
+            -ms-filter: blur(3px);
+            filter: blur(3px);
+        }   a{
+                text-decoration: none;
+            }
+
+
+        .navi{
+            background-color:rgba(121, 85, 72, 0.3);
+
+
+        }
+        .home{
+            color: darkgoldenrod;
+            font-size: 40px;
+            font-family: Comic Sans MS, serif;
+            text-decoration:none;
+        }
+        .home:hover{
+            text-decoration: none;
+        }
+        .about{
+            color:darkgreen;
+            font-size: 40px;
+            font-family: Comic Sans MS, serif;
+            text-decoration:none;
+        }
+        .about:hover{
+            text-decoration: none;
+        }
+        .login{
+            color: darkgoldenrod;
+            font-size: 40px;
+            font-family: Comic Sans MS, serif;
+            text-decoration:none;
+        }
+        .login:hover{
+            text-decoration: none;
+        }
+        .reg{
+            color: darkgreen;
+            font-size: 40px;
+            font-family: Comic Sans MS, serif;
+            text-decoration:none;
+        }
+        .reg:hover{
+            text-decoration: none;
+        }
+        .second{
+            background-color:rgba(121, 85, 72, 0.3);
+        }
+        .log{
+            color: darkolivegreen;
+            font-size: 20px;
+            font-family: Comic Sans MS, serif;
+
+        }
+        input{
+            color: blue;
+
+            font-size: 20px;
+        }
+        .uname{
+            background-color: darkgrey;
+            color: rgb(15, 69, 105);
+        }
+        .fo{
+            color:rgb(255, 252, 246);
+            font-size: 20px;
+        }
+        .do{
+            color: rgb(10, 10, 10);
+            font-size: 20px;
+            border-radius: 10%;
+            border:solid;
+
+        }
+        .do:hover{
+            background-color: green;
+        }
+        .me{
+            color: red;
+
+        }
+        a:hover{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-dark primary-color navi">
+    <a class="navbar-brand" href="#">
+        <img src="/media/auctionbuzz/images/l2.png" height="100" alt="mdb logo">
+    </a>
+    <a class="navbar-brand" href="#">
+        <a href="{% url 'home' %}" class="home" >Home </a>
+    </a>
+    <a class="navbar-brand" href="#">
+        <a class="about" href="">About</a></a>
+    <a class="navbar-brand" href="#">
+        <a href="{% url 'login' %}" class="login">Login</a></a>
+    <a class="navbar-brand" href="#">
+        <a href="{% url 'registration' %}" class="reg">Registration</a></a>
+
+</nav>
+<br>
+<br>
+<br>
+<div class="container">
+
+    <div class="col-4 log">
+    </div>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <div class="form-group fo" class="do">
+            <fieldset class="form-group">
+                <a class="uuname">Username:</a>
+                <input type="text" name="username" placeholder="username" class="uname" required/><br>
+
+                <a class="uupw">Password:</a><br>
+                <input type="password" name="password" placeholder="password" class="uname" required/><br>
+            </fieldset>
+
+        </div>
+        <div class="form-group ">
+            <input type="submit" value="LOGIN" class="do"/><br>
+        </div>
+
+        <a href="{% url 'registration' %}">Add New Account</a>
+        <div>
+            {% for message in messages %}
+                <h3 class="me">{{message}}</h3>
+            {% endfor %}
+        </div>
+
+        <div class="col-4 log">
+        </div>
+        <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"> </script>
+
+</form>
+</div>
+</body>
+</html>

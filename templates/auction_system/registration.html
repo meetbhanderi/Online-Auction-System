@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Registration</title>
+    <link rel="shortcut icon" href="auctionbuzz/images/icon.png">
+
+
+    <style type="text/css">
+        body {
+        padding-bottom: 70px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+  position: relative;
+}
+
+body::before {
+  background: url(/media/auctionbuzz/images/g5.jpg) no-repeat center center fixed;
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position:absolute; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}   
+    .form-rounded {
+        border-radius: 1rem;
+}
+    .btn.outline {
+        background: none;
+	    padding: 12px 22px;
+     }
+
+ 
+    .btn-primary.outline {
+        border: 2px solid #0099cc;
+	    color: #0099cc;
+    }
+    btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+	color: #33a6cc;
+	border-color: #33a6cc;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+	border-color: #007299;
+	color: #007299;
+	box-shadow: none;
+}   
+ 
+    .navi{
+        background-color:rgba(121, 85, 72, 0.3);
+
+
+    }
+    .home{
+        color: darkgoldenrod;
+        font-size: 40px;
+        font-family: Comic Sans MS, serif;
+        text-decoration:none;
+    }
+    .home:hover{
+        text-decoration: black;
+    }
+    .about{
+        color:darkgreen;
+        font-size: 40px;
+        font-family: Comic Sans MS, serif;
+        text-decoration:none;
+    }
+    .about:hover{
+        text-decoration: none;
+    }
+    .login{
+        color: darkgoldenrod;
+        font-size: 40px;
+        font-family: Comic Sans MS, serif;
+        text-decoration:none;
+    }
+    .login:hover{
+        text-decoration: none;
+    }
+    .reg{
+        color: darkgreen;
+        font-size: 40px;
+        font-family: Comic Sans MS, serif;
+        text-decoration:none;
+    }
+    .reg:hover{
+        text-decoration: none;
+    }
+    .second{
+        background-color:rgba(121, 85, 72, 0.3); 
+    }
+    .log{
+        color: darkolivegreen;
+        font-size: 20px;
+        font-family: Comic Sans MS, serif;
+        
+    }
+    .uname{
+        background-color: darkgrey;
+        color: rgb(15, 69, 105);
+      
+    }
+    
+    .uid{
+        background-color: darkgrey;
+        color: rgb(15, 69, 105);
+    }
+    .fo{
+        color:rgb(255, 252, 246);
+        font-size: 20px;
+    }
+    .do{
+      
+        color: rgb(10, 10, 10);
+        font-size: 20px;
+        border-radius: 10%;
+        border:solid;
+    
+    }
+    .do:hover{
+        background-color: green;
+    }
+    .me{
+        color: red;
+    
+    }
+    a:hover{
+        text-decoration: none;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+        <nav class="navbar navbar-dark primary-color navi">
+                <a class="navbar-brand" href="#">
+                  <img src="/media/auctionbuzz/images/l2.png" height="100" alt="mdb logo">
+                </a> 
+                <a class="navbar-brand" href="#">
+               <a href="{% url 'home' %}" class="home" >Home </a>
+                </a>
+                <a class="navbar-brand" href="#">
+               <a class="about" href="">About</a></a>
+               <a class="navbar-brand" href="#">
+               <a href="{% url 'login' %}" class="login">Login</a></a>
+               <a class="navbar-brand" href="#">
+               <a class="reg" href="">Registration</a></a>
+        
+              </nav>
+              <br>
+              <br>
+              <br>
+             <div class="container">
+                  <div class="row second">
+
+                  <div class="col-4 log">
+                  </div>
+                  <div class="col-4 log">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>
+                {% for message in messages %}
+                <h3 class="me">{{message}}</h3>
+                {% endfor %}
+            </div>
+        <fieldset class="form-group fo">
+            <legand class="border-bottom mb-4"><b> JOIN TODAY!! </b></legand>
+            
+        </fieldset>
+        <div class="form-group fo">
+        <fieldset class="form-group">
+            <a class="uuname">Username:</a>
+            <input type="text" name="username" placeholder="name" class="uname" required/><br>
+            <a class="uuid">Email_id:</a><br>
+            <input type="email" name="email" placeholder="email_id" class="uid" required/><br>
+            <a class="uupw">Password:</a><br>
+            <input type="password" name="password1" placeholder="password" class="uname" required/><br>
+            <a class="uupw">Confirm Password:</a><br>
+            <input type="password" name="password2" placeholder="conform password" class="uname" required/><br>
+        </fieldset>   
+ 
+        </div>
+        <div class="form-group fo">
+                <input type="submit" value="REGISTER" class="do"><br>
+        </div>
+        <a href="{% url 'login' %}">All Ready Have An Account</a>
+       
+<!--        <a>Username:</a><br>
+        <input type="text" name="username" placeholder="username"><br>
+        <Password:
+        <br>
+        <input type="password" name="password" placeholder="password"><br><br>
+        <input type="submit"><br>
+        
+-->
+    </form> 
+    </div>
+    <div class="col-4 log">
+        </div>
+    </div>
+    </div>
+     <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.js"> </script>
+</body>
+
+</html>

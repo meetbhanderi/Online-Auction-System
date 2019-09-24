@@ -1,0 +1,98 @@
+{% extends 'auction_system/product_detail_base.html' %}
+{% load staticfiles %}
+{% block head %}
+    <style>
+        .image {
+            max-width: 280px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .blank_row {
+            height: 10px !important; /* Overwrite any previous rules */
+            background-color: #FFFFFF;
+        }
+
+        .image {
+            max-width: 280px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="image">
+            <img src="{{ product_list.image.url }}" class="img-responsive img-thumbnail" style="max-height:250px;" alt="image of Product">
+        </div>
+            <br><br>
+            <table style='margin: auto'>
+                <tr>
+                    <td style="font-size: 20px;font-family: Comic Sans MS, serif; color: orangered"><b>Product Name : </b></td>
+                    <td style="font-size: 20px;font-family: Comic Sans MS, serif; color: orangered">{{ product_list.product_name }}</td>
+                </tr>
+                <tr class="blank_row">
+
+                </tr>
+                <tr>
+                    <td style="font-size: 20px;font-family: Comic Sans MS, serif; color: orangered"><b>Category : </b></td>
+                    <td style="font-size: 20px;font-family: Comic Sans MS, serif; color: orangered">{{ product_list.category }}</td>
+                </tr>
+                <tr class="blank_row">
+
+                </tr>
+                <tr>
+                    <td style="font-size: 20px;font-family: Comic Sans MS, serif; color: orangered"><b>Minimum Price : </b></td>
+                    <td style="font-size: 20px;font-family: Comic Sans MS, serif; color: orangered">{{ product_list.minimum_price }}</td>
+                </tr>
+                <tr class="blank_row">
+                <tr>
+                    <td style="font-size: 20px;font-family: Comic Sans MS, serif; color: orangered"><b>Bid End Date : </b></td>
+                    <td style="font-size: 20px;font-family: Comic Sans MS, serif; color: orangered">{{ product_list.bid_end_date }}</td>
+                </tr>
+                <tr class="blank_row">
+                </tr>
+            </table>
+
+                    <tr class="blank_row">
+                    <td colspan="2"></td>
+                </tr>
+
+
+            {% if request.user.id  !=  seller.user_name_id %}
+                <div class="error">
+                    {% if error %}
+                        {{ error }}
+                    {% endif %}
+                </div>
+                <form action="{% url 'save_bid' %}" method="POST">{% csrf_token %}
+                    <div class="form-group" style="margin-right:395px;margin-left: 395px">
+                        <input type="text" class="form-control" id="bid_amount" name="bid_amount"
+                               placeholder="Enter your bid amount" required><br>
+                        <input type="hidden" value='{{ product_list.minimum_price }}' name="minimum_price"
+                               id="minimum_price">
+                        <input type="hidden" value='{{ product_list.id }}' name="product_id" id="product_id">
+                        <button class="btn btn-lg btn-block" type="submit"
+                                style="background-color: black; color: white">Bid
+                        </button>
+                    </div>
+                </form>
+            {% endif %}
+    <a href="{% url 'view_product' %}" style="font-size: 40px;margin-left: 490px"><span class="glyphicon glyphicon-arrow-left"
+                                                             aria-hidden="true"></span> Back</a>
+    <br><br><br>
+    </div>
+{% endblock %}
